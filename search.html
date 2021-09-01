@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>search</title>
+  <style>
+  
+  body {margin: 0;}
+a:hover{cursor: pointer;}
+.back-to-top 
+{
+ position: fixed;
+ bottom: 30px;
+ right: 5px;
+ z-index: 1;
+ cursor: pointer;
+ text-decoration: none;
+ transition: opacity 2s ease-out;
+ opacity: 0.8;
+ color:  gray;/*#009ecf*/
+}
+
+.back-to-top:hover
+{
+ opacity: 1;
+}
+#mySearch {
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;  
+
+}
+
+#myMenu li
+{
+  display:none;
+}
+
+#myMenu li a 
+{
+  padding: 12px; 
+  margin-left:10%;
+  width: 70%;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #ccc;
+  border-radius:8px;
+}
+
+.searchbox
+{
+    
+  width:70%;
+  margin-left: 10%;
+  margin-top: 80px;
+  border-radius: 16px;
+  border: 2px solid gray;
+  outline: none;
+  box-shadow: 1px 2px 2px 1px rgb(0, 0, 0,0.2),1px 2px 2px 1px rgb(0, 0, 0,0.4);
+}
+.searchbox:hover
+{
+  border: 2px solid #33cccc;
+}
+
+input
+{
+  padding-left: 20px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+  </style>
+</head>
+<body>
+<div class="search">
+  
+
+  <input type="textarea" id="mySearch" onkeyup="mysearchFunction()" autocomplete="off" name="search" class="searchbox" placeholder="Search The Company name" title="Enter the Name Of The Company Whose Share Details You Have To See" />
+    
+    
+
+    <ul id="myMenu" style="padding-bottom:10px">
+      <li><a href="company/apple.html">Apple</a></li>
+      <li><a href="company/infosys.html">Infosys</a></li>
+      <li><a href="company/reliance.html">Reliance</a></li>
+      <li><a href="company/Google.html">Google</a></li>
+      <li><a href="company/Facebook.html">Facebook</a></li>
+      <li><a href="company/Tesla.html">Tesla</a></li>
+      <li><a href="company/Wipro.html">Wipro</a></li>
+      <li><a href="company/Rolex.html">Rolex Ring</a></li>
+      <li><a href="company/Amazon.html">Amazon</a></li>
+      <li><a href="company/Microsoft.html">Microsoft</a></li>
+      <li><a href="company/autodesk.html">Autodesk</a></li>
+      <li><a href="company/autodesk.html">Autodesk</a></li>
+      <li><a href="company/Nvidia.html">Nvidia</a></li>
+      <li><a href="company/jpmorgan.html">JP Morgan</a></li>
+      <li><a href="company/jnj.html">Johnson & Johnson</a></li>
+      <li><a href="company/baba.html">Alibaba</a></li>
+      <li><a href="company/wmt.html">Walmart</a></li>
+      <li><a href="company/unh.html">United Health Group</a></li>
+      <li><a href="company/bac.html">Bank of America</a></li>
+      <li><a href="company/ma.html">Mastercard</a></li>
+      <li><a href="company/pg.html">Procter & Gamle</a></li>
+      <li><a href="company/hd.html">The Home Depot</a></li>
+      <li><a href="company/asml.html">ASML Holding</a></li>
+      <li><a href="company/pypl.html">Paypal</a></li>
+      <li><a href="company/dis.html">Disney</a></li>
+      <li><a href="company/adbe.html">Adobe</a></li>
+      <li><a href="company/cmcsa.html">CMCSA</a></li>
+      <li><a href="company/bmy.html">Bristol Myers Squibb</a></li>
+      <li><a href="company/cvx.html">Chevron Corporation</a></li>
+    </ul>
+    
+</div>
+<script>
+  function mysearchFunction() 
+{
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  
+  if(input.value.length==0)
+  {
+      document.getElementById("myMenu").style.display="none";
+  }
+  
+  else
+  {
+  document.getElementById("myMenu").style.display="block";
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) 
+  {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) 
+    {
+      li[i].style.display ="block";
+    } else 
+    {
+      li[i].style.display = "none";
+    }
+  }
+  }
+}
+</script>
+</body>
+</html>

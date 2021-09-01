@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+          $.getJSON("Stock List.json", function(data) {
+     
+            for(var i = 0; i < data.length; i++){
+               var prev = "";
+               var curr = data[i].key;
+               count =0;
+               if(curr != prev) {
+                   console.log(data[i].key)
+                   prev = curr;
+                   count++;
+               }
+          }
+          console.log(count);
+          });
+        }
+        </script>
+        </head>
+        <body>
+        <div id="chartContainer" style="height: 450px; width: 100%;"></div>
+        </body>
+        </html>
